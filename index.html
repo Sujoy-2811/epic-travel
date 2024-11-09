@@ -4,167 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
     <title>Epic Travel</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <!-- for backup -->
-    <style>
-      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Roboto", sans-serif, Arial;
-      }
-
-      body {
-        font-family: Arial, sans-serif;
-      }
-
-      header {
-        height: 10vh;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-        background-color: #f4f4f4;
-      }
-
-      .logo a {
-        color: #e40a0a;
-        text-decoration: none;
-      }
-
-      nav ul {
-        display: flex;
-        align-items: center;
-        list-style-type: none;
-      }
-
-      nav ul li {
-        position: relative;
-        margin: 0 20px;
-      }
-      nav ul li::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 3px;
-        background-color: #e40a0a;
-        opacity: 0;
-        transition: all ease 0.3s;
-      }
-      nav ul li:hover::after {
-        opacity: 1;
-        width: 100%;
-      }
-
-      nav ul li a {
-        display: inline-block;
-        padding-top: 0.5rem;
-        padding-bottom: 0.5rem;
-        text-decoration: none;
-        font-family: "Montserrat", sans-serif, Arial;
-        color: #333;
-        font-weight: bold;
-      }
-
-      .dropdown-content {
-        display: none;
-        position: absolute;
-        flex-direction: column;
-        /* gap: 1rem; */
-        background-color: white;
-        width: 9rem;
-        padding: 0.5rem;
-
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 1;
-      }
-
-      .dropdown-content a {
-        padding: 0.5rem 0.2rem;
-        border-radius: 5px;
-        /* background-color: #d6caca; */
-      }
-      .dropdown-content a:hover {
-        /* padding: 0.2rem; */
-        background-color: #e9e4e4;
-      }
-
-      .dropdown:hover .dropdown-content {
-        display: flex;
-      }
-
-      nav .auth-buttons {
-        margin-left: auto;
-      }
-
-      .auth-buttons button {
-        font-size: 1rem;
-        font-weight: bold;
-        margin-left: 10px;
-        padding: 15px 20px;
-        border-radius: 15px;
-        transition: background-color 0.5s ease, transform 0.5s ease;
-        /* border: none; */
-        /* color: white; */
-        cursor: pointer;
-      }
-      .auth-buttons button:hover {
-        border-color: #fff;
-        background-color: #e40a0a;
-        color: #fff;
-      }
-
-      /* - main */
-
-      .background-image {
-        background-image: url("assets/travel-medium.jpg"),
-          url("https://images.unsplash.com/photo-1707343848552-893e05dba6ac?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
-        /* https://unsplash.com/photos/a-person-standing-on-top-of-a-large-rock-eOWabmCNEdg */
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 90vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        color: #fff;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
-      }
-
-      .text-container h2 {
-        margin-bottom: 15px;
-      }
-
-      .text-container h1 {
-        font-size: 36px;
-        margin-bottom: 20px;
-      }
-
-      .book-button {
-        padding: 15px 25px;
-
-        border: none;
-        background-color: #e40a0a;
-        font-weight: bold;
-        font-size: 1.1rem;
-        color: white;
-        cursor: pointer;
-        border-radius: 15px;
-        transition: background-color 0.5s ease, transform 0.5s ease;
-      }
-      .book-button:hover {
-        background-color: #fd3a18;
-        text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
-      }
-    </style>
-    <!-- backup -->
-    <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
@@ -174,7 +21,7 @@
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Book</a></li>
+          <li><a href="#book">Book</a></li>
           <li class="dropdown">
             <a href="#">Packages</a>
             <div class="dropdown-content">
@@ -184,17 +31,45 @@
               <a href="#">Germany</a>
             </div>
           </li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
         </ul>
       </nav>
-      <div class="auth-buttons">
+      <div class="auth-buttons auth_big_screen">
         <button>Login</button>
         <button>Register</button>
       </div>
+      <div class="nav_hamburger">
+        <div class="auth-buttons">
+          <button>Login</button>
+          <button>Register</button>
+        </div>
+        <div class="hamburger-menu">
+          <div class="menu-icon"></div>
+          <nav class="menu">
+            <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#book">Book</a></li>
+              <li class="dropdown">
+                <a href="#">Packages</a>
+                <div class="dropdown-content">
+                  <a href="#">United States</a>
+                  <a href="#">India</a>
+                  <a href="#">France</a>
+                  <a href="#">Germany</a>
+                </div>
+              </li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#about">About</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
     </header>
     <main>
+      <!-- welcome section -->
       <div class="background-image">
         <div class="text-container">
           <h2>Welcome to Epic Travel</h2>
@@ -202,24 +77,385 @@
           <button class="book-button">Book Now</button>
         </div>
       </div>
-    </main>
-    <!-- <script src="script.js"></script> -->
-    <script>
-      const countries = [
-        "United States",
-        "France",
-        "Germany",
-        "Italy",
-        "Japan",
-        "India",
-      ];
-      let index = 0;
 
-      setInterval(() => {
-        document.querySelector("#countryName span").innerText =
-          countries[index];
-        index = (index + 1) % countries.length;
-      }, 2000);
-    </script>
+      <!-- Book section -->
+      <div class="book_container" id="book">
+        <h2>Book</h2>
+
+        <div class="book_form_container">
+          <img
+            src="https://images.unsplash.com/photo-1658778176925-e0027cd4259a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA=="
+            class="book_container_logo"
+            alt=""
+            height="auto"
+          />
+
+          <form id="form_book">
+            <label for="where_to">Where To</label>
+            <select id="where_to" name="where_to">
+              <option value="paris" selected>Paris</option>
+              <option value="london">London</option>
+              <option value="new_york">New York</option>
+            </select>
+            <label for="how_many">How Many</label>
+            <input type="number" name="how_many" id="how_many" />
+            <label for="start_date">Start Date</label>
+            <input type="date" name="start_date" id="start_date" />
+            <label for="end_date">End Date</label>
+            <input type="date" name="end_date" id="end_date" />
+            <label for="description">End Your Name & Details</label>
+            <textarea type="" name="description" id="description"></textarea>
+            <div class="submit_button_container">
+              <button type="submit">Book Now</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- packages -->
+
+      <div id="packages">
+        <h2>Packages</h2>
+
+        <div class="packages_container">
+          <!--  -->
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+          <div class="package">
+            <img src="./assets/travel-small.jpg" alt="" />
+            <div class="package_des_container">
+              <h3>Title</h3>
+              <p class="package_des">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Soluta
+                molestias animi, exercitationem itaque magni deserunt!
+                Perspiciatis ex minus labore voluptates esse. Expedita corrupti
+                nulla, quasi et optio excepturi necessitatibus facilis? Amet,
+                provident.
+              </p>
+              <div>
+                <span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span
+                ><span class="fa fa-star checked"></span>
+              </div>
+              <div class="package_price_container">
+                <span>Price:</span>
+                <span>$500</span>
+              </div>
+              <button>Book</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div id="services">
+        <h2>Services</h2>
+        <div class="services_container">
+          <div class="service">
+            <img src="./assets/hotel.jpg" alt="" />
+            <div class="service_title"><span>Affordable Hotel</span></div>
+          </div>
+          <div class="service">
+            <img src="./assets/food.jpg" alt="" />
+            <div class="service_title"><span>Food & Drinks</span></div>
+          </div>
+          <div class="service">
+            <img src="./assets/safety.jpg" alt="" />
+            <div class="service_title"><span>Safety Guide</span></div>
+          </div>
+          <div class="service">
+            <img src="./assets/taxi.jpg" alt="" />
+            <div class="service_title"><span>Taxi</span></div>
+          </div>
+          <div class="service">
+            <img src="./assets/passport.jpg" alt="" />
+            <div class="service_title"><span>Passport Assistance</span></div>
+          </div>
+          <div class="service">
+            <img src="./assets/assistant.jpg" alt="" />
+            <div class="service_title"><span>Travel Advisory</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- gallery -->
+      <div id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery_container">
+          <div class="slider-wrapper">
+            <div class="slider">
+              <img id="slide-1" src="./assets/travel1.jpg" alt="famous place" />
+              <img id="slide-2" src="./assets/travel2.jpg" alt="famous place" />
+              <img id="slide-3" src="./assets/travel3.jpg" alt="famous place" />
+              <img id="slide-4" src="./assets/travel4.jpg" alt="famous place" />
+              <img id="slide-5" src="./assets/travel5.jpg" alt="famous place" />
+            </div>
+            <div class="slider-nav">
+              <a href="#slide-1"></a>
+              <a href="#slide-2"></a>
+              <a href="#slide-3"></a>
+              <a href="#slide-4"></a>
+              <a href="#slide-5"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- about -->
+      <div id="about">
+        <h2>About US</h2>
+        <div class="about_container">
+          <div class="about_logo">
+            <img
+              src="./assets/logo_profile.jpg"
+              alt="3D rendering of an imaginary blue planet in space"
+            />
+          </div>
+          <div class="about_company_info">
+            <p>
+              Epic Travel is your go-to partner for unforgettable journeys
+              around the globe. Founded in 2010 by passionate travel
+              enthusiasts, we specialize in custom travel packages, group tours,
+              luxury escapes, and adventure travel.
+            </p>
+            <div class="about_info_why">
+              <h3>Why Choose Us?</h3>
+              <ul>
+                <li>
+                  <span
+                    >Expert Guidance: Personalized service from experienced
+                    consultants.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Customer Satisfaction: We prioritize your travel
+                    experience.</span
+                  >
+                </li>
+                <li>
+                  <span
+                    >Sustainable Practices: Committed to eco-friendly
+                    tourism.</span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="footer_container">
+        <div class="logo">
+          <a href="#"><h1>EPIC TRAVEL</h1></a>
+        </div>
+        <div class="footer_social_media">
+          <a href="#">
+            <img src="./assets/facebook.png" alt="" />
+          </a>
+          <a href="#">
+            <img src="./assets/instagram.png" alt="" />
+          </a>
+          <a href="#">
+            <img src="./assets/linkedin.png" alt="" />
+          </a>
+        </div>
+      </div>
+      <div class="copywrite">© 2024 - Designed and Developed by Sujoy</div>
+    </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
