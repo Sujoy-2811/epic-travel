@@ -113,7 +113,8 @@ nav .auth-buttons {
   /* color: white; */
   cursor: pointer;
 }
-.auth-buttons button:hover {
+.auth-buttons button:hover,
+.hover-effect:hover {
   border-color: #fff;
   background-color: #e40a0a;
   color: #fff;
@@ -299,7 +300,8 @@ nav .auth-buttons {
   box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25);
 }
 
-.book_form_container > form {
+.book_form_container > form,
+.auth-modal form {
   font-size: 1.5rem;
   flex: 1;
   display: flex;
@@ -307,13 +309,15 @@ nav .auth-buttons {
   padding: 2rem;
 }
 
-form > label {
+form > label,
+.auth-modal label {
   margin-bottom: 0.5rem;
 }
-form > input {
+form > input,
+.auth-modal input {
   border-radius: 0.5rem;
   font-size: 1.2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.1rem;
   height: 2.5rem;
   padding: 0.5rem;
 }
@@ -343,6 +347,75 @@ form button {
 form button:hover {
   color: #fff;
   background-color: #e40a0a;
+}
+
+form h3 {
+  padding-bottom: 2rem;
+  margin: auto;
+}
+
+form .auth-method-change {
+  padding-top: 1rem;
+}
+
+form .submit-btn,
+.success-message,
+.spinner {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+form .auth-toggle {
+  color: #0a4faa;
+  cursor: pointer;
+}
+
+form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+form .radio-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#submitBtn,
+#submitBtn-login {
+  /* padding: 10px 20px; */
+  /* font-size: 16px; */
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.spinner,
+.success-message {
+  display: none;
+  font-size: 16px;
+}
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #3498db;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.8s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 /* packages */
@@ -703,4 +776,45 @@ footer {
     max-width: 80%;
     margin: 1rem auto;
   }
+}
+
+/* - Auth modal */
+
+/* Add to your existing styles.css */
+.auth-modal {
+  /* display: none; */
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.auth-modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  position: relative;
+  font-size: 1rem;
+}
+
+.close {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: #1a73e8;
 }

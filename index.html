@@ -37,8 +37,8 @@
         </ul>
       </nav>
       <div class="auth-buttons auth_big_screen">
-        <button>Login</button>
-        <button>Register</button>
+        <button onclick="openLoginModal()" class="">Login</button>
+        <button onclick="openRegistrationModal()" class="">Register</button>
       </div>
       <div class="nav_hamburger">
         <div class="auth-buttons">
@@ -68,6 +68,146 @@
         </div>
       </div>
     </header>
+
+    <!-- - Login Modal -->
+    <div id="loginModal" class="auth-modal">
+      <div class="auth-modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <div class="container">
+          <form id="loginForm">
+            <h3>Login</h3>
+            <div class="form-group">
+              <label for="loginEmail">Email</label>
+              <input type="email" id="loginEmail" name="loginEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="loginPassword">Password</label>
+              <input
+                type="password"
+                id="loginPassword"
+                name="loginPassword"
+                minlength="8"
+                required
+              />
+            </div>
+            <button
+              type="submit"
+              class="submit-btn hover-effect"
+              id="submitBtn-login"
+            >
+              <span class="button-text">Submit</span>
+              <span class="spinner"></span>
+              <span class="success-message">Success!</span>
+            </button>
+            <p class="register-link auth-method-change">
+              Don't have an account?
+              <span class="auth-toggle" onclick="openRegistrationModal()"
+                >Register here</span
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- - Registration Modal  -->
+    <div id="registrationModal" class="auth-modal">
+      <div class="auth-modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <!-- Your existing form code goes here -->
+        <div class="registratio-modal-container">
+          <form id="registrationForm" onsubmit="return validateForm(event)">
+            <h3>Registration Form</h3>
+
+            <div class="form-group">
+              <label for="fullname">Full Name</label>
+              <input type="text" id="fullname" name="fullname" required />
+              <span class="error" id="fullnameError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="contact">Contact</label>
+              <input
+                type="tel"
+                id="contact"
+                name="contact"
+                pattern="[0-9]{10}"
+                maxlength="10"
+                required
+              />
+
+              <span class="error" id="contactError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="dob">Date of Birth</label>
+              <input
+                type="date"
+                id="dob"
+                name="dob"
+                max="2010-12-31"
+                min="1980-01-01"
+                required
+              />
+              <span class="error" id="dobError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+              <span class="error" id="emailError"></span>
+            </div>
+
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                minlength="8"
+                required
+              />
+              <span class="error" id="passwordError"></span>
+            </div>
+
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="radio-group">
+                <input
+                  type="radio"
+                  id="male"
+                  name="gender"
+                  value="male"
+                  required
+                />
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">Female</label>
+              </div>
+              <span class="error" id="genderError"></span>
+            </div>
+
+            <button
+              type="submit"
+              class="submit-btn hover-effect"
+              id="submitBtn"
+            >
+              <span class="button-text">Submit</span>
+              <span class="spinner"></span>
+              <span class="success-message">Success!</span>
+            </button>
+
+            <p class="login-link auth-method-change">
+              Already have an account?
+              <span class="auth-toggle" onclick="openLoginModal()"
+                >Login here</span
+              >
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <main>
       <!-- welcome section -->
       <div class="background-image">

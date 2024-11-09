@@ -74,12 +74,161 @@ const images = document.querySelectorAll(".slider img");
 let currentIndex = 0;
 
 function changeSlide() {
-  currentIndex = (currentIndex + 1) % images.length; // Move to the next index
+  currentIndex = (currentIndex + 1) % images.length;
   slider.scrollTo({
-    left: currentIndex * slider.clientWidth, // Scroll to the new slide
+    left: currentIndex * slider.clientWidth,
     behavior: "smooth",
   });
 }
 
 // Change slide every 3 seconds
 setInterval(changeSlide, 3000);
+
+// - registration modal
+
+function reset() {
+  document.getElementById("registrationModal").style.display = "none";
+  document.getElementById("registrationForm").reset();
+
+  document.getElementById("loginModal").style.display = "none";
+  document.getElementById("loginForm").reset();
+}
+
+function openRegistrationModal() {
+  reset();
+  // document.getElementById("registrationModal").style.display = "block";
+  document.getElementById("registrationModal").style.display = "flex";
+}
+
+function closeModal() {
+  reset();
+  document
+    .querySelectorAll(".error")
+    .forEach((error) => (error.textContent = ""));
+}
+
+// - login modal
+function openLoginModal() {
+  reset();
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLoginModal() {
+  reset();
+}
+
+// -Close login modal if clicked outside
+window.onclick = function (event) {
+  const loginModal = document.getElementById("loginModal");
+  const modal = document.getElementById("registrationModal");
+  if (event.target == loginModal) {
+    console.log("login");
+
+    closeLoginModal();
+  }
+
+  if (event.target == modal) {
+    console.log("regis");
+    closeModal();
+  }
+};
+// // Close modal if clicked outside
+
+// - registration modal
+
+function reset() {
+  document.getElementById("registrationModal").style.display = "none";
+  document.getElementById("registrationForm").reset();
+
+  document.getElementById("loginModal").style.display = "none";
+  document.getElementById("loginForm").reset();
+}
+
+function openRegistrationModal() {
+  reset();
+  document.getElementById("registrationModal").style.display = "flex";
+}
+
+function closeModal() {
+  reset();
+  document
+    .querySelectorAll(".error")
+    .forEach((error) => (error.textContent = ""));
+}
+
+// - login modal
+function openLoginModal() {
+  reset();
+  document.getElementById("loginModal").style.display = "flex";
+}
+
+function closeLoginModal() {
+  reset();
+}
+
+// -Close login modal if clicked outside
+window.onclick = function (event) {
+  const loginModal = document.getElementById("loginModal");
+  const modal = document.getElementById("registrationModal");
+  if (event.target == loginModal) {
+    console.log("login");
+
+    closeLoginModal();
+  }
+
+  if (event.target == modal) {
+    console.log("regis");
+    closeModal();
+  }
+};
+// // Close modal if clicked outside
+
+// - animation
+
+document
+  .getElementById("registrationForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById("submitBtn");
+    submitBtn.disabled = true;
+    const buttonText = submitBtn.querySelector(".button-text");
+    const spinner = submitBtn.querySelector(".spinner");
+    const successMessage = submitBtn.querySelector(".success-message");
+
+    buttonText.style.visibility = "hidden";
+    spinner.style.display = "block";
+
+    setTimeout(() => {
+      buttonText.style.display = "none";
+      spinner.style.display = "none";
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        reset();
+      }, 2000);
+    }, 2000);
+  });
+
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const submitBtn = document.getElementById("submitBtn-login");
+    submitBtn.disabled = true;
+    const buttonText = submitBtn.querySelector(".button-text");
+    const spinner = submitBtn.querySelector(".spinner");
+    const successMessage = submitBtn.querySelector(".success-message");
+
+    buttonText.style.visibility = "hidden";
+    spinner.style.display = "block";
+
+    setTimeout(() => {
+      buttonText.style.display = "none";
+      spinner.style.display = "none";
+      successMessage.style.display = "block";
+      setTimeout(() => {
+        reset();
+      }, 2000);
+    }, 2000);
+  });
