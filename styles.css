@@ -818,3 +818,11 @@ footer {
 .close:hover {
   color: #1a73e8;
 }
+
+#login-auth-msg {
+  display: none;
+  color: #f00;
+  text-align: center;
+  padding-top: 1rem;
+  font-size: 1rem;
+}

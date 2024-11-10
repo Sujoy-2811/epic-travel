@@ -6,6 +6,9 @@ const countries = [
   "Italy",
   "Japan",
 ];
+
+const EMAIL = "sujoy@jain.com";
+const PASSWORD = "sujoy-manna";
 let index = 0;
 
 setInterval(() => {
@@ -215,20 +218,36 @@ document
     event.preventDefault();
 
     const submitBtn = document.getElementById("submitBtn-login");
-    submitBtn.disabled = true;
+    const authMsg = document.getElementById("login-auth-msg");
+    const loginPassword = document.getElementById("loginPassword");
+    const loginEmail = document.getElementById("loginEmail");
     const buttonText = submitBtn.querySelector(".button-text");
     const spinner = submitBtn.querySelector(".spinner");
     const successMessage = submitBtn.querySelector(".success-message");
+    authMsg.style.display = "none";
 
+    submitBtn.disabled = true;
     buttonText.style.visibility = "hidden";
     spinner.style.display = "block";
 
     setTimeout(() => {
-      buttonText.style.display = "none";
-      spinner.style.display = "none";
-      successMessage.style.display = "block";
-      setTimeout(() => {
-        reset();
-      }, 2000);
+      if (
+        loginEmail.value === "sujoy@jain.com" &&
+        loginPassword.value === "sujoy-manna"
+      ) {
+        buttonText.style.display = "none";
+        spinner.style.display = "none";
+        successMessage.style.display = "block";
+        setTimeout(() => {
+          reset();
+        }, 2000);
+      } else {
+        submitBtn.disabled = false;
+        buttonText.style.visibility = "visible";
+        spinner.style.display = "none";
+        loginEmail.value = "";
+        loginPassword.value = "";
+        authMsg.style.display = "block";
+      }
     }, 2000);
   });
