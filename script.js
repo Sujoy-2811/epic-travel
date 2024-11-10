@@ -226,7 +226,7 @@ document
     const successMessage = submitBtn.querySelector(".success-message");
     authMsg.style.display = "none";
 
-    submitBtn.disabled = true;
+    // submitBtn.disabled = true;
     buttonText.style.visibility = "hidden";
     spinner.style.display = "block";
 
@@ -238,8 +238,12 @@ document
         buttonText.style.display = "none";
         spinner.style.display = "none";
         successMessage.style.display = "block";
+
         setTimeout(() => {
           reset();
+          successMessage.style.display = "none";
+          buttonText.style.display = "block";
+          buttonText.style.visibility = "visible";
         }, 2000);
       } else {
         submitBtn.disabled = false;
